@@ -28,7 +28,7 @@ return packer.startup(function(use)
     use 'nvim-lua/plenary.nvim'
 
     --theme
-    use 'ellisonleao/gruvbox.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- utilities
     use 'christoomey/vim-tmux-navigator'

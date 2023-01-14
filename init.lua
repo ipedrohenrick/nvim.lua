@@ -2,9 +2,9 @@ require('plugins-setup')
 
 require('config.options')
 require('config.keymaps')
-require('config.colorscheme')
 
 -- plugins
+require('plugins.theme')
 require('plugins.devicons')
 require('plugins.comment')
 require('plugins.nvim-tree')
