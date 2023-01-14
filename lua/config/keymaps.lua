@@ -7,6 +7,8 @@ keymap.set('i', 'jk', '<ESC>')
 keymap.set('n', '<leader>nh', ':nohl<CR>')
 keymap.set('n', 'x', '"_x')
 
+keymap.set('n', '<leader>af', ':DashboardNewFile<CR>')
+
 keymap.set('n', '<leader>+', '<C-a>')
 keymap.set('n', '<leader>-', '<C-x>')
 
@@ -17,14 +19,13 @@ keymap.set('n', '<leader>sx', ':close<CR>')
 
 
 keymap.set('n', '<leader>to', ':tabnew<CR>')
-keymap.set('n', '<leadernnx', ':tabclose<CR>')
+keymap.set('n', '<leader>tx', ':tabclose<CR>')
 keymap.set('n', '<leader>tn', ':tabn<CR>')
 keymap.set('n', '<leader>tp', ':tabp<CR>')
 
 -- plugins keymaps
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>')
 keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
-keymap.set('n', '<leader>eo', ':NvimTreeFocus<CR>')
 
 --telescope
 keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')

@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- cursor
+vim.cmd('set guicursor= ')
+
 -- line numbers
 opt.number = true
 
