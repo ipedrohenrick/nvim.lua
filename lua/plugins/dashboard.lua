@@ -3,7 +3,8 @@ if not dashboard_status then
     return
 end
 
-dashboard.preview_command = 'lolcat -F 0.2'
+--dashboard.preview_command = 'lolcat -F 0.2'
+dashboard.preview_command = 'cat'
 dashboard.preview_file_path = vim.fn.stdpath('config') .. '/assets/logo.cat'
 dashboard.preview_file_height = 17
 dashboard.preview_file_width = 34
