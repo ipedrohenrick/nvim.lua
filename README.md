@@ -2,4 +2,4 @@
 
 ## Screenshots
 
-![initial display](assets/image0.png)
+![initial display](readme/image0.png)
