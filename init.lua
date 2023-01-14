@@ -5,6 +5,7 @@ require('config.keymaps')
 require('config.colorscheme')
 
 -- plugins
+require('plugins.devicons')
 require('plugins.comment')
 require('plugins.nvim-tree')
 require('plugins.lualine')

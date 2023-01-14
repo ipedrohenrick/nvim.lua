@@ -36,6 +36,7 @@ return packer.startup(function(use)
     use 'numToStr/Comment.nvim'
 
     -- icons
+    use 'DaikyXendo/nvim-material-icon'
     use 'nvim-tree/nvim-web-devicons'
 
     -- tree
