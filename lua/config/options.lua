@@ -10,8 +10,8 @@ opt.number = true
 opt.mouse = 'a'
 
 -- taps & indentation
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 opt.wrap = false
