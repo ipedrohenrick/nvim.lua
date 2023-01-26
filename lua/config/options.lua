@@ -36,3 +36,6 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append('-')
+
+-- langs
+vim.g.python3_host_prog = "/usr/bin/python"
