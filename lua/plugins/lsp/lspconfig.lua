@@ -28,7 +28,7 @@ local on_attach = function(client, bufnr)
     keymap.set('n', '<leader>o', '<cmd>LSoutlineToggle<CR>', opts)
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 lspconfig['html'].setup({
     capabilities = capabilities,
@@ -45,7 +45,7 @@ lspconfig['pyright'].setup({
     on_attach = on_attach
 })
 
-lspconfig['sumneko_lua'].setup({
+lspconfig['lua_ls'].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
