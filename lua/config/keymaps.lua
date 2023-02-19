@@ -3,10 +3,10 @@ vim.g.mapleader = ' '
 local keymap = vim.keymap
 
 -- general keymaps
+keymap.set('n', '<leader>q', ':q<CR>')
+
 keymap.set('n', '<leader>nh', ':nohl<CR>')
 keymap.set('n', 'x', '"_x')
-
-keymap.set('n', '<leader>af', ':DashboardNewFile<CR>')
 
 keymap.set('n', '<leader>+', '<C-a>')
 keymap.set('n', '<leader>-', '<C-x>')

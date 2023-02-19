@@ -43,7 +43,7 @@ return packer.startup(function(use)
     use 'nvim-tree/nvim-tree.lua'
 
     -- dashboard
-    use 'glepnir/dashboard-nvim'
+    use {'glepnir/dashboard-nvim', event='VimEnter'}
 
     -- status line
     use 'nvim-lualine/lualine.nvim'
