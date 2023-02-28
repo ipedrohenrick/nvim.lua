@@ -16,6 +16,7 @@ mason_lspconfig.setup({
         'cssls',
         'pylsp',
         'tsserver',
-        'volar'
+        'volar',
+        'lua_ls'
     }
 })
