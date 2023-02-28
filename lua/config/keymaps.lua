@@ -4,6 +4,7 @@ local keymap = vim.keymap
 
 -- general keymaps
 keymap.set('n', '<leader>q', ':q<CR>')
+keymap.set('n', '<leader>rl', ':source $MYVIMRC<CR>')
 
 keymap.set('n', '<leader>nh', ':nohl<CR>')
 keymap.set('n', 'x', '"_x')
