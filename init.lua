@@ -14,6 +14,7 @@ require('plugins.nvim-cmp')
 require('plugins.dashboard')
 require('plugins.gitsigns')
 require('plugins.bufferline')
+require('plugins.colorizer')
 require('plugins.ds-presence')
 
 -- lsp 

@@ -92,6 +92,10 @@ return packer.startup(function(use)
 
     -- discord presence
     use 'andweeb/presence.nvim'
+
+    -- colorizer
+    use 'norcalli/nvim-colorizer.lua'
+
     if packer_bootstrap then
         require('packer').sync()
     end
