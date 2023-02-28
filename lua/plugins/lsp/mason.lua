@@ -14,7 +14,7 @@ mason_lspconfig.setup({
     ensure_installed = {
         'html',
         'cssls',
-        'pyright',
+        'pylsp',
         'tsserver',
         'volar'
     }

@@ -40,9 +40,24 @@ lspconfig['cssls'].setup({
     on_attach = on_attach
 })
 
-lspconfig['pyright'].setup({
+lspconfig['pylsp'].setup({
     capabilities = capabilities,
-    on_attach = on_attach
+    on_attach = on_attach,
+    settings = {
+        pylsp = {
+            configurationSources = { 'flake8' },
+            plugins = {
+                flake8 = {
+                    enabled = true,
+                    maxLineLength = 79,
+                },
+                autopep8 = { enabled = false },
+                pycodestyle = { enabled = false },
+                yapf = { enabled = false },
+                maccabe = { enabled = false }
+            }
+        }
+    }
 })
 
 lspconfig['lua_ls'].setup({
