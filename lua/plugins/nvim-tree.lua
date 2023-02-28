@@ -67,4 +67,13 @@ nvimtree.setup({
             quit_on_open = true,
         },
     },
+    git = {
+        ignore = false,
+    },
+    filters = {
+        custom = {
+            '^.git$',
+            '^.venv$'
+        }
+    }
 })
