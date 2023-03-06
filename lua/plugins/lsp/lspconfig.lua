@@ -53,6 +53,7 @@ lspconfig['pylsp'].setup({
                 },
                 autopep8 = { enabled = false },
                 pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
                 yapf = { enabled = false },
                 maccabe = { enabled = false }
             }
