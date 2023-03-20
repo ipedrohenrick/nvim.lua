@@ -16,6 +16,7 @@ require('plugins.gitsigns')
 require('plugins.bufferline')
 require('plugins.colorizer')
 require('plugins.ds-presence')
+require('plugins.blankline')
 
 -- lsp 
 require('plugins.lsp.mason')

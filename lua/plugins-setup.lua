@@ -51,6 +51,9 @@ return packer.startup(function(use)
     -- bufferline
     use 'akinsho/bufferline.nvim'
 
+    -- blankline
+    use "lukas-reineke/indent-blankline.nvim"
+
     -- fuzy finding
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
