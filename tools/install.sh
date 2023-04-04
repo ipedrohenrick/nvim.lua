@@ -13,6 +13,7 @@ declare -a __system_deps=(
   "npm"
   "python3"
   "cargo"
+  "wget"
 )
 
 declare -a __npm_deps=(
