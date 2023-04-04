@@ -1,5 +1,10 @@
 # Neovim Configs
 
+## Install
+```bash
+bash -c "$(curl -fsSl https://raw.githubusercontent.com/pedrohenrick777/configs.nvim/main/tools/install.sh)"
+```
+
 ## Dashboard
 ![Dashboard](readme/image0.png)
 
