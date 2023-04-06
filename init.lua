@@ -1,28 +1,37 @@
-require('plugins-setup')
+local lazypath = vim.fn.stdpath('data') .. 'lazy/lazy.nvim'
 
-require('config.options')
-require('config.keymaps')
+if not vim.loop.fs_stat(lazypath) then
+  require('core.bootstrap').lazy(lazypath)
+end
 
--- plugins
-require('plugins.theme')
-require('plugins.devicons')
-require('plugins.comment')
-require('plugins.nvim-tree')
-require('plugins.lualine')
-require('plugins.telescope')
-require('plugins.nvim-cmp')
-require('plugins.dashboard')
-require('plugins.gitsigns')
-require('plugins.bufferline')
-require('plugins.colorizer')
-require('plugins.ds-presence')
-require('plugins.blankline')
+vim.opt.rtp:prepend(lazypath)
+require 'plugins'
 
--- lsp 
-require('plugins.lsp.mason')
-require('plugins.lsp.lspsaga')
-require('plugins.lsp.lspconfig')
+-- require('plugins-setup')
 
--- highlighting and autoclosing
-require('plugins.treesitter')
-require('plugins.autopairs')
+-- require('config.options')
+-- require('config.keymaps')
+
+-- -- plugins
+-- require('plugins.theme')
+-- require('plugins.devicons')
+-- require('plugins.comment')
+-- require('plugins.nvim-tree')
+-- require('plugins.lualine')
+-- require('plugins.telescope')
+-- require('plugins.nvim-cmp')
+-- require('plugins.dashboard')
+-- require('plugins.gitsigns')
+-- require('plugins.bufferline')
+-- require('plugins.colorizer')
+-- require('plugins.ds-presence')
+-- require('plugins.blankline')
+
+-- -- lsp 
+-- require('plugins.lsp.mason')
+-- require('plugins.lsp.lspsaga')
+-- require('plugins.lsp.lspconfig')
+
+-- -- highlighting and autoclosing
+-- require('plugins.treesitter')
+-- require('plugins.autopairs')
