@@ -18,7 +18,7 @@ local header = {
 	[[                                                     ]],
 }
 
-local options = {
+return {
   theme = 'doom',
   config = {
     header = header,
@@ -80,5 +80,3 @@ local options = {
     },
   },
 }
-
-return options
