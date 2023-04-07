@@ -12,6 +12,7 @@ M.lazy = function(install_path)
   vim.opt.rtp:prepend(install_path)
 
   require 'plugins'
+  vim.api.nvim_buf_delete(0, { force = true })
 end
 
 return M

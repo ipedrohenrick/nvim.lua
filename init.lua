@@ -6,6 +6,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require 'plugins'
+require 'core'
 
 -- require('plugins-setup')
 
