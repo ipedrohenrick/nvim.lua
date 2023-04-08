@@ -1,5 +1,5 @@
 -- cursor
-vim.cmd('set guicursor= ')
+vim.cmd('set guicursor=n:block,i:ver1,v:hor1')
 
 -- numbers
 vim.opt.number = true
