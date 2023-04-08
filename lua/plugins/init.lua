@@ -43,6 +43,13 @@ if lazy_status then
       end
     },
     {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+        require('gitsigns').setup()
+      end,
+      event = 'BufRead'
+    },
+    {
       'catppuccin/nvim',
       name = 'catppuccin',
       config = function()
