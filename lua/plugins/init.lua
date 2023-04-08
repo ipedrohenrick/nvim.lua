@@ -37,6 +37,12 @@ if lazy_status then
       event = 'BufWinEnter'
     },
     {
+      'nvim-lualine/lualine.nvim',
+      config = function()
+        require 'plugins.config.lualine'
+      end
+    },
+    {
       'catppuccin/nvim',
       name = 'catppuccin',
       config = function()
