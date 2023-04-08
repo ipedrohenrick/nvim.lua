@@ -2,8 +2,15 @@ vim.g.mapleader = ' '
 
 local keymap = vim.keymap
 
+
+keymap.set('n', '<leader>rl', ':source $MYVIMRC<CR>')
+-- navigation
+keymap.set('n', '<leader>q', ':q<CR>')
+keymap.set('n', '<leader>w', ':w<CR>')
+
 -- neo-tree
 keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
+
 -- buffers
 keymap.set('n', '<S-l>', ':BufferLineCycleNext<CR>')
 keymap.set('n', '<S-h>', ':BufferLineCyclePrev<CR>')
