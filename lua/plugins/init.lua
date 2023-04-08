@@ -19,6 +19,23 @@ if lazy_status then
       end,
       config = function(_, opts)
         require('nvim-tree').setup(opts)
+      'akinsho/bufferline.nvim',
+      version = 'v3*',
+      dependencies = 'nvim-tree/nvim-web-devicons',
+      config = function()
+        require 'plugins.config.bufferline'
+      end,
+      event = 'BufWinEnter'
+    },
+    {
+      'catppuccin/nvim',
+      name = 'catppuccin',
+      config = function()
+        require('catppuccin').setup({
+          flavour = 'mocha',
+          transparent_background = true
+        })
+        vim.cmd('colorscheme catppuccin')
       end
     }
   })
