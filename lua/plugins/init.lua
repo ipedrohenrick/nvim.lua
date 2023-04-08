@@ -1,6 +1,8 @@
 local lazy_status, lazy = pcall(require, 'lazy')
 if lazy_status then
   lazy.setup({
+    { 'nvim-lua/plenary.nvim' },
+
     {
       'glepnir/dashboard-nvim',
       eventi = 'VimEnter',
@@ -12,13 +14,20 @@ if lazy_status then
       end
     },
     {
-      'nvim-tree/nvim-tree.lua',
-      cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
-      opts = function()
-        return require 'plugins.config.nvimtree'
+      'nvim-neo-tree/neo-tree.nvim',
+      cmd = 'Neotree',
+      dependencies = {
+        'MunifTanjim/nui.nvim',
+        'nvim-tree/nvim-web-devicons'
+      },
+      init = function()
+        vim.g.neo_tree_remove_legacy_commands = true
       end,
-      config = function(_, opts)
-        require('nvim-tree').setup(opts)
+      config = function()
+        require 'plugins.config.neotree'
+      end
+    },
+    {
       'akinsho/bufferline.nvim',
       version = 'v3*',
       dependencies = 'nvim-tree/nvim-web-devicons',

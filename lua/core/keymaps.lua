@@ -2,8 +2,8 @@ vim.g.mapleader = ' '
 
 local keymap = vim.keymap
 
--- normal mode
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+-- neo-tree
+keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
 -- buffers
 keymap.set('n', '<S-l>', ':BufferLineCycleNext<CR>')
 keymap.set('n', '<S-h>', ':BufferLineCyclePrev<CR>')
