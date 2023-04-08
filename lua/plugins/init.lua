@@ -1,6 +1,7 @@
 local lazy_status, lazy = pcall(require, 'lazy')
 if lazy_status then
   lazy.setup({
+    { 'christoomey/vim-tmux-navigator' },
     { 'nvim-lua/plenary.nvim' },
 
     {
