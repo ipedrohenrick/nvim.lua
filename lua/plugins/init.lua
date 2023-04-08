@@ -51,6 +51,13 @@ if lazy_status then
       event = 'BufRead'
     },
     {
+      'lukas-reineke/indent-blankline.nvim',
+      config = function()
+        require 'plugins.config.blankline'
+      end,
+      event = 'BufRead'
+    },
+    {
       'catppuccin/nvim',
       name = 'catppuccin',
       config = function()
