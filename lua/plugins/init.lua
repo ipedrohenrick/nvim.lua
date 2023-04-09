@@ -16,7 +16,7 @@ if lazy_status then
       cmd = 'Neotree',
       dependencies = {
         'MunifTanjim/nui.nvim',
-        'nvim-tree/nvim-web-devicons'
+        'nvim-web-devicons'
       },
       init = function()
         vim.g.neo_tree_remove_legacy_commands = true
@@ -35,7 +35,7 @@ if lazy_status then
     {
       'akinsho/bufferline.nvim',
       version = 'v3*',
-      dependencies = 'nvim-tree/nvim-web-devicons',
+      dependencies = 'nvim-web-devicons',
       config = function()
         require 'plugins.config.bufferline'
       end,
@@ -88,6 +88,16 @@ if lazy_status then
       event = 'BufRead',
       config = function()
         require('colorizer').setup()
+      end
+    },
+    {
+      'nvim-tree/nvim-web-devicons',
+      lazy = true,
+      dependencies = 'DaikyXendo/nvim-material-icon',
+      config = function()
+        require('nvim-web-devicons').setup({
+          override = require('nvim-material-icon').get_icons()
+        })
       end
     },
 
