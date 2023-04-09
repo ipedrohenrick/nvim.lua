@@ -61,6 +61,13 @@ if lazy_status then
       end,
       event = 'BufRead'
     },
+    {
+      'numToStr/Comment.nvim',
+      event = 'InsertEnter',
+      config = function()
+        require('Comment').setup()
+      end
+    },
 
     -- lang configs
     {
