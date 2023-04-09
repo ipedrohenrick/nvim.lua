@@ -6,12 +6,9 @@ if lazy_status then
 
     {
       'glepnir/dashboard-nvim',
-      eventi = 'VimEnter',
-      opts = function()
+      event = 'VimEnter',
+      config = function()
         return require 'plugins.config.dashboard'
-      end,
-      config = function(_, opts)
-        require('dashboard').setup(opts)
       end
     },
     {
@@ -26,6 +23,13 @@ if lazy_status then
       end,
       config = function()
         require 'plugins.config.neotree'
+      end
+    },
+    {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.1',
+      config = function()
+        require('telescope').setup()
       end
     },
     {
