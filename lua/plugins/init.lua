@@ -83,6 +83,13 @@ if lazy_status then
         require('nvim-autopairs').setup(opts)
       end
     },
+    {
+      'norcalli/nvim-colorizer.lua',
+      event = 'BufRead',
+      config = function()
+        require('colorizer').setup()
+      end
+    },
 
     -- lang configs
     {
