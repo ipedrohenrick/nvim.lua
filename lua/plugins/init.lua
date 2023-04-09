@@ -61,6 +61,17 @@ if lazy_status then
       end,
       event = 'BufRead'
     },
+
+    -- lang configs
+    {
+      'nvim-treesitter/nvim-treesitter',
+      event = { 'BufReadPost', 'BufNewFile' },
+      cmd = { 'TSIntall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
+      build = ':TSUpdate',
+      config = function()
+        require('plugins.config.treesitter')
+      end
+    },
     {
       'catppuccin/nvim',
       name = 'catppuccin',
