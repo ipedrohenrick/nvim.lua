@@ -21,3 +21,8 @@ keymap.set('n', '<leader>sv', '<C-w>v')
 keymap.set('n', '<leader>sh', '<C-w>s')
 keymap.set('n', '<leader>se', '<C-w>=')
 keymap.set('n', '<leader>sx', ':close<CR>')
+
+-- telescope
+keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
+keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
+keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
