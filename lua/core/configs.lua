@@ -1,5 +1,7 @@
+vim.opt.confirm = true
 -- cursor
 vim.cmd('set guicursor=n:block,i:ver1,v:hor1')
+vim.opt.cursorline = true
 
 -- numbers
 vim.opt.number = true
