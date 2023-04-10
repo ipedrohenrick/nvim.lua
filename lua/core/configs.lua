@@ -1,4 +1,5 @@
 vim.opt.confirm = true
+
 -- cursor
 vim.cmd('set guicursor=n:block,i:ver1,v:hor1')
 vim.opt.cursorline = true
@@ -37,6 +38,8 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.iskeyword:append('-')
+
+vim.g.python3_host_prog = '/bin/python3'
 
 -- disabled providers
 vim.g.loaded_perl_provider = 0
