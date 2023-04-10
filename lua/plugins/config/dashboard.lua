@@ -1,9 +1,3 @@
-local dashboard_status, dashboard = pcall(require, 'dashboard')
-if not dashboard_status then
-    return
-end
-
-
 local header = {
 	[[                                                     ]],
 	[[                                                     ]],
@@ -24,7 +18,7 @@ local header = {
 	[[                                                     ]],
 }
 
-dashboard.setup{
+require('dashboard').setup({
   theme = 'doom',
   config = {
     header = header,
@@ -85,4 +79,4 @@ dashboard.setup{
       },
     },
   },
-}
+})
