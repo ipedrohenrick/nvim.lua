@@ -49,17 +49,17 @@ if lazy_status then
     },
     {
       'lewis6991/gitsigns.nvim',
+      event = 'BufRead',
       config = function()
         require('gitsigns').setup()
       end,
-      event = 'BufRead'
     },
     {
       'lukas-reineke/indent-blankline.nvim',
+      event = 'BufRead',
       config = function()
         require 'plugins.config.blankline'
       end,
-      event = 'BufRead'
     },
     {
       'numToStr/Comment.nvim',
@@ -203,6 +203,7 @@ if lazy_status then
       end
     },
 
+    -- theme
     {
       'catppuccin/nvim',
       name = 'catppuccin',
