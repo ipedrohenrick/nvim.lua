@@ -18,7 +18,7 @@ local header = {
 	[[                                                     ]],
 }
 
-return {
+require('dashboard').setup({
   theme = 'doom',
   config = {
     header = header,
@@ -79,4 +79,4 @@ return {
       },
     },
   },
-}
+})

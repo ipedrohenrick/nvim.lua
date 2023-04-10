@@ -138,6 +138,60 @@ if lazy_status then
       end
     },
     {
+      'hrsh7th/nvim-cmp',
+      event = 'InsertEnter',
+      dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'saadparwaiz1/cmp_luasnip',
+        'L3MON4D3/LuaSnip',
+        'rafamadriz/friendly-snippets',
+        'onsails/lspkind.nvim'
+      },
+      config = function()
+        require('plugins.lsp.cmp')
+      end
+    },
+    {
+      'neovim/nvim-lspconfig',
+      event = { "BufReadPre", "BufNewFile" },
+      dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'mason.nvim',
+        'mason-lspconfig.nvim'
+      },
+      config = function()
+        require('plugins.lsp.lspconfig')
+      end
+    },
+    {
+      'williamboman/mason.nvim',
+      cmd = 'Mason',
+      build = ':MasonUpdate',
+      dependencies = 'mason-lspconfig.nvim',
+      config = function()
+        require('mason').setup()
+      end
+    },
+    {
+      'williamboman/mason-lspconfig.nvim',
+      lazy = true,
+      opts = {
+        ensure_installed = {
+          'html',
+          'cssls',
+          'pylsp',
+          'tsserver',
+          'volar',
+          'lua_ls'
+        }
+      },
+      config = function(_, opts)
+        require('mason-lspconfig').setup(opts)
+      end
+    },
+    {
       'catppuccin/nvim',
       name = 'catppuccin',
       config = function()
