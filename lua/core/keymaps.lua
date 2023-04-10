@@ -4,9 +4,14 @@ local keymap = vim.keymap
 
 
 keymap.set('n', '<leader>rl', ':source $MYVIMRC<CR>')
+
 -- navigation
 keymap.set('n', '<leader>q', ':q<CR>')
 keymap.set('n', '<leader>w', ':w<CR>')
+keymap.set('n', '<A-j>', ':m .+1<CR>==')
+keymap.set('n', '<A-k>', ':m .-2<CR>==')
+keymap.set('i', '<A-j>', '<ESC>:m .+1<CR>==gi')
+keymap.set('i', '<A-k>', '<ESC>:m .-2<CR>==gi')
 
 -- neo-tree
 keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
