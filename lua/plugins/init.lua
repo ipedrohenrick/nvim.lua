@@ -192,6 +192,18 @@ if lazy_status then
       end
     },
     {
+      'glepnir/lspsaga.nvim',
+      event = "LspAttach",
+      dependencies = {
+        'nvim-web-devicons',
+        'nvim-treesitter'
+      },
+      config = function()
+        require('lspsaga').setup()
+      end
+    },
+
+    {
       'catppuccin/nvim',
       name = 'catppuccin',
       config = function()
