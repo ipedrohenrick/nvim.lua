@@ -2,8 +2,6 @@ local lazy_status, lazy = pcall(require, 'lazy')
 if lazy_status then
   lazy.setup({
     { 'christoomey/vim-tmux-navigator' },
-    { 'nvim-lua/plenary.nvim' },
-
     {
       'glepnir/dashboard-nvim',
       event = 'VimEnter',
@@ -13,10 +11,11 @@ if lazy_status then
     },
     {
       'nvim-neo-tree/neo-tree.nvim',
-      cmd = 'Neotree',
+      event = 'VimEnter',
       dependencies = {
         'MunifTanjim/nui.nvim',
-        'nvim-web-devicons'
+        'nvim-web-devicons',
+        'nvim-lua/plenary.nvim'
       },
       init = function()
         vim.g.neo_tree_remove_legacy_commands = true
@@ -28,6 +27,7 @@ if lazy_status then
     {
       'nvim-telescope/telescope.nvim',
       tag = '0.1.1',
+      cmd = 'Telescope',
       config = function()
         require('telescope').setup()
       end
@@ -35,14 +35,15 @@ if lazy_status then
     {
       'akinsho/bufferline.nvim',
       version = 'v3*',
+      event = { 'BufRead', 'BufNewFile' },
       dependencies = 'nvim-web-devicons',
       config = function()
         require 'plugins.config.bufferline'
-      end,
-      event = 'BufWinEnter'
+      end
     },
     {
       'nvim-lualine/lualine.nvim',
+      event = { 'BufRead', 'BufNewFile'},
       config = function()
         require 'plugins.config.lualine'
       end
@@ -70,7 +71,7 @@ if lazy_status then
     },
     {
       'windwp/nvim-autopairs',
-      event = 'InsertEnter',
+      event = { 'BufRead', 'BufNewFile' },
       opts = {
         check_ts = true,
         ts_config = {
@@ -130,7 +131,7 @@ if lazy_status then
     -- lang configs
     {
       'nvim-treesitter/nvim-treesitter',
-      event = { 'BufReadPost', 'BufNewFile' },
+      event = { 'BufRead', 'BufNewFile' },
       cmd = { 'TSIntall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
       build = ':TSUpdate',
       config = function()
@@ -141,25 +142,31 @@ if lazy_status then
       'hrsh7th/nvim-cmp',
       event = 'InsertEnter',
       dependencies = {
+        'saadparwaiz1/cmp_luasnip',
+        'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
-        'saadparwaiz1/cmp_luasnip',
-        'L3MON4D3/LuaSnip',
-        'rafamadriz/friendly-snippets',
-        'onsails/lspkind.nvim'
+        'onsails/lspkind.nvim',
+        'LuaSnip',
       },
       config = function()
         require('plugins.lsp.cmp')
       end
     },
     {
+      'L3MON4D3/LuaSnip',
+      lazy = true,
+      dependencies = 'rafamadriz/friendly-snippets',
+      config = function()
+        require('luasnip').setup()
+      end
+    },
+    {
       'neovim/nvim-lspconfig',
-      event = { "BufReadPre", "BufNewFile" },
+      event = { 'BufRead', 'BufNewFile' },
       dependencies = {
-        'hrsh7th/cmp-nvim-lsp',
-        'mason.nvim',
-        'mason-lspconfig.nvim'
+        'mason.nvim'
       },
       config = function()
         require('plugins.lsp.lspconfig')
@@ -167,36 +174,31 @@ if lazy_status then
     },
     {
       'williamboman/mason.nvim',
-      cmd = 'Mason',
-      build = ':MasonUpdate',
-      dependencies = 'mason-lspconfig.nvim',
-      config = function()
-        require('mason').setup()
-      end
-    },
-    {
-      'williamboman/mason-lspconfig.nvim',
-      lazy = true,
+      cmd = {
+        'Mason',
+        'MasonInstall',
+        'MasonInstallAll',
+        'MasonUninstall',
+        'MasonUninstallAll',
+        'MasonLog'
+      },
       opts = {
         ensure_installed = {
-          'html',
-          'cssls',
-          'pylsp',
-          'tsserver',
-          'volar',
-          'lua_ls'
+          'lua-language-server',
         }
       },
       config = function(_, opts)
-        require('mason-lspconfig').setup(opts)
+        require('mason').setup(opts)
+
+        vim.api.nvim_create_user_command('MasonInstallAll', function ()
+          vim.cmd('MasonInstall ' .. table.concat(opts.ensure_installed, " "))
+        end, {})
       end
     },
     {
       'glepnir/lspsaga.nvim',
-      event = "LspAttach",
       dependencies = {
         'nvim-web-devicons',
-        'nvim-treesitter'
       },
       config = function()
         require('lspsaga').setup()
