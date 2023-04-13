@@ -31,3 +31,6 @@ keymap.set('n', '<leader>sx', ':close<CR>')
 keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
 keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
 keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
+
+-- others
+keymap.set('n', '<leader>l', ':Lazy<CR>')
