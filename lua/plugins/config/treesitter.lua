@@ -19,5 +19,7 @@ require('nvim-treesitter.configs').setup({
     'lua',
     'dockerfile',
     'yaml',
+    'markdown',
+    'markdown_inline'
   },
 })
