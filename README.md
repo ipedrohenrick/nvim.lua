@@ -1,18 +1,15 @@
 # Neovim Configs
 
+## Dependencies
+- [fd](https://github.com/sharkdp/fd)
+- [neovim node-client](https://github.com/neovim/node-client)
+- [pynvim](https://github.com/neovim/pynvim)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- xclip
+- wget
+
 ## Install
 ```bash
-bash -c "$(curl -fsSl https://raw.githubusercontent.com/pedrohenrick777/configs.nvim/main/tools/install.sh)"
+mkdir ~/.config
+git clone https://github.com/pedrohenrick777/configs.nvim.git ~/.config/nvim
 ```
-
-## Dashboard
-![Dashboard](readme/image0.png)
-
-## Code highlighting
-![Code highlighting](readme/image1.png)
-
-## File explorer
-![File explorer](readme/image2.png)
-
-## Telescope finder
-![Telescope finder](readme/image3.png)
