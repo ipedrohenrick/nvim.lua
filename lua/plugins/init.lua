@@ -127,15 +127,6 @@ if lazy_status then
 
     -- lang configs
     {
-      'nvim-treesitter/nvim-treesitter',
-      event = { 'BufRead', 'BufNewFile' },
-      cmd = { 'TSIntall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
-      build = ':TSUpdate',
-      config = function()
-        require('plugins.config.treesitter')
-      end
-    },
-    {
       'hrsh7th/nvim-cmp',
       event = 'InsertEnter',
       dependencies = {
@@ -193,15 +184,24 @@ if lazy_status then
       end
     },
     {
-      'glepnir/lspsaga.nvim',
+      'nvimdev/lspsaga.nvim',
       dependencies = {
         'nvim-web-devicons',
+        'nvim-treesitter/nvim-treesitter',
       },
       config = function()
         require('lspsaga').setup()
       end
     },
-
+    {
+      'nvim-treesitter/nvim-treesitter',
+      event = { 'BufRead', 'BufNewFile' },
+      cmd = { 'TSIntall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
+      build = ':TSUpdate',
+      config = function()
+        require('plugins.config.treesitter')
+      end
+    },
     -- theme
     {
       'catppuccin/nvim',
