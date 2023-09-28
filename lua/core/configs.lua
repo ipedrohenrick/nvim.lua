@@ -1,8 +1,11 @@
 vim.opt.confirm = true
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- cursor
 vim.cmd('set guicursor=n:block,i:ver1,v:hor1')
 vim.opt.cursorline = true
+vim.opt.scrolloff = 10
 
 -- numbers
 vim.opt.number = true
