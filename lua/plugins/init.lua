@@ -1,7 +1,17 @@
 local lazy_status, lazy = pcall(require, 'lazy')
 if lazy_status then
   lazy.setup({
-    { 'christoomey/vim-tmux-navigator' },
+    -- theme
+    {
+      'catppuccin/nvim',
+      name = 'catppuccin',
+      config = function()
+        require('catppuccin').setup({
+          flavour = 'mocha'
+        })
+        vim.cmd('colorscheme catppuccin')
+      end
+    },
     {
       'glepnir/dashboard-nvim',
       event = 'VimEnter',
@@ -11,22 +21,23 @@ if lazy_status then
     },
     {
       'nvim-neo-tree/neo-tree.nvim',
+      branch = 'v3.x',
       event = 'VimEnter',
       dependencies = {
         'MunifTanjim/nui.nvim',
         'nvim-web-devicons',
         'nvim-lua/plenary.nvim'
       },
-      init = function()
-        vim.g.neo_tree_remove_legacy_commands = true
-      end,
       config = function()
         require 'plugins.config.neotree'
       end
     },
     {
       'nvim-telescope/telescope.nvim',
-      tag = '0.1.1',
+      branch = '0.1.x',
+      dependencies = {
+        'nvim-lua/plenary.nvim'
+      },
       cmd = 'Telescope',
       config = function()
         require('telescope').setup()
@@ -43,7 +54,7 @@ if lazy_status then
     },
     {
       'nvim-lualine/lualine.nvim',
-      event = { 'BufRead', 'BufNewFile'},
+      event = { 'WinEnter' },
       config = function()
         require 'plugins.config.lualine'
       end
@@ -162,25 +173,28 @@ if lazy_status then
     },
     {
       'williamboman/mason.nvim',
+      dependencies = { 'mason-lspconfig.nvim' },
       cmd = {
         'Mason',
         'MasonInstall',
-        'MasonInstallAll',
         'MasonUninstall',
         'MasonUninstallAll',
         'MasonLog'
       },
+      config = function()
+        require('mason').setup()
+      end
+    },
+    {
+      'williamboman/mason-lspconfig.nvim',
       opts = {
         ensure_installed = {
-          'lua-language-server',
+          'lua_ls',
+          'pyright'
         }
       },
       config = function(_, opts)
-        require('mason').setup(opts)
-
-        vim.api.nvim_create_user_command('MasonInstallAll', function ()
-          vim.cmd('MasonInstall ' .. table.concat(opts.ensure_installed, " "))
-        end, {})
+        require('mason-lspconfig').setup(opts)
       end
     },
     {
@@ -202,17 +216,6 @@ if lazy_status then
         require('plugins.config.treesitter')
       end
     },
-    -- theme
-    {
-      'catppuccin/nvim',
-      name = 'catppuccin',
-      config = function()
-        require('catppuccin').setup({
-          flavour = 'mocha',
-          -- transparent_background = true
-        })
-        vim.cmd('colorscheme catppuccin')
-      end
-    }
+    { 'christoomey/vim-tmux-navigator' },
   })
 end
