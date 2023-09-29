@@ -7,17 +7,17 @@ require('bufferline').setup({
     color_icons = true,
     offsets = {
       {
-        filetype = "NvimTree",
-        text = "File Explorer",
-        highlight = "PanelHeading",
+        filetype = 'NvimTree',
+        text = 'File Explorer',
+        highlight = 'PanelHeading',
         padding = 1,
       },
       {
-        filetype = "neo-tree",
-        text = "File Explorer",
-        highlight = "PanelHeading",
-        padding = 1
+        filetype = 'neo-tree',
+        text = 'File Explorer',
+        highlight = 'PanelHeading',
+        padding = 1,
       },
     },
-  }
+  },
 })

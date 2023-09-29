@@ -4,7 +4,7 @@ require('nvim-treesitter.configs').setup({
   rainbow = {
     enable = true,
     query = 'rainbow-parens',
-    strategy = rainbow.strategy.global
+    strategy = rainbow.strategy.global,
   },
   auto_install = true,
   highlight = {
@@ -27,6 +27,6 @@ require('nvim-treesitter.configs').setup({
     'dockerfile',
     'yaml',
     'markdown',
-    'markdown_inline'
+    'markdown_inline',
   },
 })

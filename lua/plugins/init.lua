@@ -7,10 +7,10 @@ if lazy_status then
       name = 'catppuccin',
       config = function()
         require('catppuccin').setup({
-          flavour = 'mocha'
+          flavour = 'mocha',
         })
         vim.cmd('colorscheme catppuccin')
-      end
+      end,
     },
 
     -- ui
@@ -19,7 +19,7 @@ if lazy_status then
       event = 'VimEnter',
       config = function()
         require('plugins.config.dashboard')
-      end
+      end,
     },
     {
       'nvim-neo-tree/neo-tree.nvim',
@@ -28,23 +28,23 @@ if lazy_status then
       dependencies = {
         'MunifTanjim/nui.nvim',
         'nvim-lua/plenary.nvim',
-        'nvim-tree/nvim-web-devicons'
+        'nvim-tree/nvim-web-devicons',
       },
       config = function()
         require('plugins.config.neotree')
         require('plugins.config.web-devicons')
-      end
+      end,
     },
     {
       'nvim-telescope/telescope.nvim',
       branch = '0.1.x',
       cmd = 'Telescope',
       dependencies = {
-        'nvim-lua/plenary.nvim'
+        'nvim-lua/plenary.nvim',
       },
       config = function()
         require('telescope').setup()
-      end
+      end,
     },
     {
       'akinsho/bufferline.nvim',
@@ -53,14 +53,14 @@ if lazy_status then
       dependencies = 'nvim-web-devicons',
       config = function()
         require('plugins.config.bufferline')
-      end
+      end,
     },
     {
       'nvim-lualine/lualine.nvim',
       event = 'User FileOpened',
       config = function()
         require('plugins.config.lualine')
-      end
+      end,
     },
 
     -- editor
@@ -84,7 +84,7 @@ if lazy_status then
       event = 'User FileOpened',
       config = function()
         require('Comment').setup()
-      end
+      end,
     },
     {
       'windwp/nvim-autopairs',
@@ -92,21 +92,21 @@ if lazy_status then
       opts = {
         check_ts = true,
         ts_config = {
-          lua = {'string'},
-          javascript = {'template_string'},
+          lua = { 'string' },
+          javascript = { 'template_string' },
           java = false,
-        }
+        },
       },
       config = function(_, opts)
         require('nvim-autopairs').setup(opts)
-      end
+      end,
     },
     {
       'norcalli/nvim-colorizer.lua',
       event = 'User FileOpened',
       config = function()
         require('colorizer').setup()
-      end
+      end,
     },
 
     -- others
@@ -115,8 +115,8 @@ if lazy_status then
       'andweeb/presence.nvim',
       opts = {
         auto_update = true,
-        neovim_image_text = "The One True Text Editor",
-        main_image = "file",
+        neovim_image_text = 'The One True Text Editor',
+        main_image = 'file',
         log_level = nil,
         debounce_timeout = 10,
         enable_line_number = false,
@@ -125,17 +125,17 @@ if lazy_status then
         file_assets = {},
         show_time = true,
 
-        editing_text = "Editing %s",
-        file_explorer_text = "Browsing %s",
-        git_commit_text = "Committing changes",
-        plugin_manager_text = "Managing plugins",
-        reading_text = "Reading %s",
-        workspace_text = "Working on %s",
-        line_number_text = "Line %s out of %s",
+        editing_text = 'Editing %s',
+        file_explorer_text = 'Browsing %s',
+        git_commit_text = 'Committing changes',
+        plugin_manager_text = 'Managing plugins',
+        reading_text = 'Reading %s',
+        workspace_text = 'Working on %s',
+        line_number_text = 'Line %s out of %s',
       },
       config = function(_, opts)
         require('presence').setup(opts)
-      end
+      end,
     },
 
     -- lsp configs
@@ -150,12 +150,12 @@ if lazy_status then
         'hrsh7th/cmp-nvim-lsp',
         'onsails/lspkind.nvim',
         'saadparwaiz1/cmp_luasnip',
-        'rafamadriz/friendly-snippets'
+        'rafamadriz/friendly-snippets',
       },
       config = function()
         require('plugins.lsp.cmp')
         require('luasnip').setup()
-      end
+      end,
     },
     {
       'neovim/nvim-lspconfig',
@@ -164,12 +164,12 @@ if lazy_status then
         'mason.nvim',
         'nvim-web-devicons',
         'nvim-treesitter',
-        'nvimdev/lspsaga.nvim'
+        'nvimdev/lspsaga.nvim',
       },
       config = function()
         require('plugins.lsp.lspconfig')
         require('lspsaga').setup()
-      end
+      end,
     },
     {
       'williamboman/mason.nvim',
@@ -179,10 +179,10 @@ if lazy_status then
         require('mason-lspconfig').setup({
           ensure_installed = {
             'lua_ls',
-            'pyright'
-          }
+            'pyright',
+          },
         })
-      end
+      end,
     },
     {
       'nvim-treesitter/nvim-treesitter',
@@ -190,7 +190,7 @@ if lazy_status then
       dependencies = 'HiPhish/nvim-ts-rainbow2',
       config = function()
         require('plugins.config.treesitter')
-      end
+      end,
     },
   })
 end

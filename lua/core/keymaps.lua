@@ -2,7 +2,6 @@ vim.g.mapleader = ' '
 
 local keymap = vim.keymap
 
-
 keymap.set('n', '<leader>rl', ':source $MYVIMRC<CR>')
 
 -- navigation
@@ -34,3 +33,4 @@ keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
 
 -- others
 keymap.set('n', '<leader>l', ':Lazy<CR>')
+keymap.set('n', '<leader>m', ':Mason<CR>')

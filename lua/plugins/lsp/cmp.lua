@@ -4,12 +4,12 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
   completion = {
-    completeopt = 'menu,menuone,noselect'
+    completeopt = 'menu,menuone,noselect',
   },
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end
+      require('luasnip').lsp_expand(args.body)
+    end,
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-k>'] = cmp.mapping.select_prev_item(),
@@ -32,5 +32,4 @@ cmp.setup({
       ellipsis_char = '...',
     }),
   },
-
 })

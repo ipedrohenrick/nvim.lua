@@ -1,21 +1,21 @@
 local header = {
-	[[                                                     ]],
-	[[                                                     ]],
-	[[                                                     ]],
-	[[  ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓ ]],
-	[[  ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒ ]],
-	[[ ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░ ]],
-	[[ ▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██  ]],
-	[[ ▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒ ]],
-	[[ ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░ ]],
-	[[ ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░ ]],
-	[[    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░    ]],
-	[[          ░    ░  ░    ░ ░        ░   ░         ░    ]],
-	[[                                 ░                   ]],
-	[[                                                     ]],
-	[[                                                     ]],
-	[[                                                     ]],
-	[[                                                     ]],
+  [[                                                     ]],
+  [[                                                     ]],
+  [[                                                     ]],
+  [[  ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓ ]],
+  [[  ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒ ]],
+  [[ ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░ ]],
+  [[ ▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██  ]],
+  [[ ▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒ ]],
+  [[ ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░ ]],
+  [[ ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░ ]],
+  [[    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░    ]],
+  [[          ░    ░  ░    ░ ░        ░   ░         ░    ]],
+  [[                                 ░                   ]],
+  [[                                                     ]],
+  [[                                                     ]],
+  [[                                                     ]],
+  [[                                                     ]],
 }
 
 require('dashboard').setup({
@@ -30,7 +30,7 @@ require('dashboard').setup({
         desc_hl = 'String',
         key = 'n',
         key_hl = 'Number',
-        action = 'n Untitled'
+        action = 'n Untitled',
       },
       {
         icon = '󰈞 ',
@@ -39,7 +39,7 @@ require('dashboard').setup({
         desc_hl = 'String',
         key = 'f',
         key_hl = 'Number',
-        action = 'Telescope find_files'
+        action = 'Telescope find_files',
       },
       {
         icon = '󰊄 ',
@@ -48,7 +48,7 @@ require('dashboard').setup({
         desc_hl = 'String',
         key = 't',
         key_hl = 'Number',
-        action = 'Telescope live_grep'
+        action = 'Telescope live_grep',
       },
       {
         icon = '󱑀 ',
@@ -57,7 +57,7 @@ require('dashboard').setup({
         desc_hl = 'String',
         key = 'r',
         key_hl = 'Number',
-        action = 'Telescope oldfiles'
+        action = 'Telescope oldfiles',
       },
       {
         icon = ' ',

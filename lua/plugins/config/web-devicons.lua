@@ -3,30 +3,30 @@ require('nvim-web-devicons').setup({
     md = {
       icon = '',
       color = '#528bd1',
-      name = 'Markdown'
+      name = 'Markdown',
     },
     sh = {
       icon = '',
       color = '#89e051',
-      name = 'ShellScript'
-    }
+      name = 'ShellScript',
+    },
   },
 
   override_by_filename = {
     ['.gitconfig'] = {
       icon = '',
       color = '#e63939',
-      name = 'Gitconfig'
+      name = 'Gitconfig',
     },
     ['.gitignore'] = {
       icon = '',
       color = '#e63939',
-      name = 'Gitignore'
+      name = 'Gitignore',
     },
     ['.gitmodules'] = {
       icon = '',
       color = '#e63939',
-      name = 'Gitmodules'
-    }
+      name = 'Gitmodules',
+    },
   },
 })
