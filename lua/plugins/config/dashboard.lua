@@ -30,7 +30,7 @@ require('dashboard').setup({
         desc_hl = 'String',
         key = 'n',
         key_hl = 'Number',
-        action = 'enew'
+        action = 'n Untitled'
       },
       {
         icon = '󰈞 ',

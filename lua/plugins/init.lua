@@ -12,33 +12,36 @@ if lazy_status then
         vim.cmd('colorscheme catppuccin')
       end
     },
+
+    -- ui
     {
       'glepnir/dashboard-nvim',
       event = 'VimEnter',
       config = function()
-        return require 'plugins.config.dashboard'
+        require('plugins.config.dashboard')
       end
     },
     {
       'nvim-neo-tree/neo-tree.nvim',
       branch = 'v3.x',
-      event = 'VimEnter',
+      cmd = 'Neotree',
       dependencies = {
         'MunifTanjim/nui.nvim',
-        'nvim-web-devicons',
-        'nvim-lua/plenary.nvim'
+        'nvim-lua/plenary.nvim',
+        'nvim-tree/nvim-web-devicons'
       },
       config = function()
-        require 'plugins.config.neotree'
+        require('plugins.config.neotree')
+        require('plugins.config.web-devicons')
       end
     },
     {
       'nvim-telescope/telescope.nvim',
       branch = '0.1.x',
+      cmd = 'Telescope',
       dependencies = {
         'nvim-lua/plenary.nvim'
       },
-      cmd = 'Telescope',
       config = function()
         require('telescope').setup()
       end
@@ -46,43 +49,46 @@ if lazy_status then
     {
       'akinsho/bufferline.nvim',
       version = 'v3*',
-      event = { 'BufRead', 'BufNewFile' },
+      event = 'User FileOpened',
       dependencies = 'nvim-web-devicons',
       config = function()
-        require 'plugins.config.bufferline'
+        require('plugins.config.bufferline')
       end
     },
     {
       'nvim-lualine/lualine.nvim',
-      event = { 'WinEnter' },
+      event = 'User FileOpened',
       config = function()
-        require 'plugins.config.lualine'
+        require('plugins.config.lualine')
       end
     },
+
+    -- editor
     {
       'lewis6991/gitsigns.nvim',
-      event = 'BufRead',
+      event = 'User FileOpened',
       config = function()
         require('gitsigns').setup()
       end,
     },
     {
       'lukas-reineke/indent-blankline.nvim',
-      event = 'BufRead',
+      main = 'ibl',
+      event = 'User FileOpened',
       config = function()
-        require 'plugins.config.blankline'
+        require('plugins.config.blankline')
       end,
     },
     {
       'numToStr/Comment.nvim',
-      event = 'InsertEnter',
+      event = 'User FileOpened',
       config = function()
         require('Comment').setup()
       end
     },
     {
       'windwp/nvim-autopairs',
-      event = { 'BufRead', 'BufNewFile' },
+      event = 'User FileOpened',
       opts = {
         check_ts = true,
         ts_config = {
@@ -97,18 +103,14 @@ if lazy_status then
     },
     {
       'norcalli/nvim-colorizer.lua',
-      event = 'BufRead',
+      event = 'User FileOpened',
       config = function()
         require('colorizer').setup()
       end
     },
-    {
-      'nvim-tree/nvim-web-devicons',
-      lazy = true,
-      config = function()
-        require('plugins.config.web-devicons')
-      end
-    },
+
+    -- others
+    { 'christoomey/vim-tmux-navigator' },
     {
       'andweeb/presence.nvim',
       opts = {
@@ -136,86 +138,59 @@ if lazy_status then
       end
     },
 
-    -- lang configs
+    -- lsp configs
     {
       'hrsh7th/nvim-cmp',
       event = 'InsertEnter',
       dependencies = {
-        'saadparwaiz1/cmp_luasnip',
+        'L3MON4D3/LuaSnip',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
         'onsails/lspkind.nvim',
-        'LuaSnip',
+        'saadparwaiz1/cmp_luasnip',
+        'rafamadriz/friendly-snippets'
       },
       config = function()
         require('plugins.lsp.cmp')
-      end
-    },
-    {
-      'L3MON4D3/LuaSnip',
-      lazy = true,
-      dependencies = 'rafamadriz/friendly-snippets',
-      config = function()
         require('luasnip').setup()
       end
     },
     {
       'neovim/nvim-lspconfig',
-      event = { 'BufRead', 'BufNewFile' },
+      event = 'User FileOpened',
       dependencies = {
-        'mason.nvim'
+        'mason.nvim',
+        'nvim-web-devicons',
+        'nvim-treesitter',
+        'nvimdev/lspsaga.nvim'
       },
       config = function()
         require('plugins.lsp.lspconfig')
-      end
-    },
-    {
-      'williamboman/mason.nvim',
-      dependencies = { 'mason-lspconfig.nvim' },
-      cmd = {
-        'Mason',
-        'MasonInstall',
-        'MasonUninstall',
-        'MasonUninstallAll',
-        'MasonLog'
-      },
-      config = function()
-        require('mason').setup()
-      end
-    },
-    {
-      'williamboman/mason-lspconfig.nvim',
-      opts = {
-        ensure_installed = {
-          'lua_ls',
-          'pyright'
-        }
-      },
-      config = function(_, opts)
-        require('mason-lspconfig').setup(opts)
-      end
-    },
-    {
-      'nvimdev/lspsaga.nvim',
-      dependencies = {
-        'nvim-web-devicons',
-        'nvim-treesitter/nvim-treesitter',
-      },
-      config = function()
         require('lspsaga').setup()
       end
     },
     {
+      'williamboman/mason.nvim',
+      dependencies = 'williamboman/mason-lspconfig.nvim',
+      config = function()
+        require('mason').setup()
+        require('mason-lspconfig').setup({
+          ensure_installed = {
+            'lua_ls',
+            'pyright'
+          }
+        })
+      end
+    },
+    {
       'nvim-treesitter/nvim-treesitter',
-      event = { 'BufRead', 'BufNewFile' },
-      cmd = { 'TSIntall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
       build = ':TSUpdate',
+      dependencies = 'HiPhish/nvim-ts-rainbow2',
       config = function()
         require('plugins.config.treesitter')
       end
     },
-    { 'christoomey/vim-tmux-navigator' },
   })
 end

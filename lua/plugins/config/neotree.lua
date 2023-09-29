@@ -12,7 +12,7 @@ vim.fn.sign_define(
 )
 vim.fn.sign_define(
   'DiagnosticSignHint',
-  {text = "", texthl = "DiagnosticSignHint"}
+  {text = " ", texthl = "DiagnosticSignHint"}
 )
 
 require('neo-tree').setup({
@@ -26,10 +26,10 @@ require('neo-tree').setup({
       folder_closed = '󰉋',
       folder_open = '',
       folder_empty = '',
-      default = '',
+      default = '',
     },
     name = {
-      use_git_status_colors = false
+      use_git_status_colors = true
     },
     git_status = {
       symbols = {
