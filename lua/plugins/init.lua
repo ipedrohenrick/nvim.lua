@@ -174,6 +174,14 @@ if lazy_status then
     {
       'williamboman/mason.nvim',
       dependencies = 'williamboman/mason-lspconfig.nvim',
+      cmd = {
+        'Mason',
+        'MasonInstall',
+        'MasonLog',
+        'MasonUninstall',
+        'MasonUninstallAll',
+        'MasonUpdate',
+      },
       config = function()
         require('mason').setup()
         require('mason-lspconfig').setup({
