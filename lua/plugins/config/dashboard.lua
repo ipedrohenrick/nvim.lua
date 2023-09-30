@@ -29,13 +29,13 @@ require('dashboard').setup({
     },
     project = {
       limit = 6,
-      action = 'e cwd='
+      action = 'e cwd=',
     },
     mru = {
-      limit = 6
-    }
+      limit = 6,
+    },
   },
   hide = {
-    tabline = false
-  }
+    tabline = false,
+  },
 })
