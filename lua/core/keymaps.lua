@@ -13,7 +13,7 @@ keymap.set('i', '<A-j>', '<ESC>:m .+1<CR>==gi')
 keymap.set('i', '<A-k>', '<ESC>:m .-2<CR>==gi')
 
 -- neo-tree
-keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
+keymap.set('n', '<leader>e', ':Neotree . toggle<CR>')
 
 -- buffers
 keymap.set('n', '<S-l>', ':BufferLineCycleNext<CR>')
