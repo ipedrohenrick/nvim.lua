@@ -34,3 +34,4 @@ keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
 -- others
 keymap.set('n', '<leader>l', ':Lazy<CR>')
 keymap.set('n', '<leader>m', ':Mason<CR>')
+keymap.set('n', '<leader>z', ':Dashboard<CR>')

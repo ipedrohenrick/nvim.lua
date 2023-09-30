@@ -1,82 +1,41 @@
-local header = {
-  [[                                                     ]],
-  [[                                                     ]],
-  [[                                                     ]],
-  [[  ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓ ]],
-  [[  ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒ ]],
-  [[ ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░ ]],
-  [[ ▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██  ]],
-  [[ ▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒ ]],
-  [[ ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░ ]],
-  [[ ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░ ]],
-  [[    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░    ]],
-  [[          ░    ░  ░    ░ ░        ░   ░         ░    ]],
-  [[                                 ░                   ]],
-  [[                                                     ]],
-  [[                                                     ]],
-  [[                                                     ]],
-  [[                                                     ]],
-}
-
 require('dashboard').setup({
-  theme = 'doom',
+  theme = 'hyper',
+  disable_move = true,
+  change_to_vcs_root = true,
   config = {
-    header = header,
-    center = {
+    week_header = {
+      enable = true,
+      concat = '我們開始工作吧，好嗎？',
+    },
+    shortcut = {
       {
-        icon = '󰈔 ',
-        icon_hl = 'Title',
-        desc = 'New File',
-        desc_hl = 'String',
-        key = 'n',
-        key_hl = 'Number',
-        action = 'n Untitled',
-      },
-      {
-        icon = '󰈞 ',
-        icon_hl = 'Title',
-        desc = 'Find File',
-        desc_hl = 'String',
+        desc = '󰈞 Files',
+        group = 'DashboardFooter',
         key = 'f',
-        key_hl = 'Number',
         action = 'Telescope find_files',
       },
       {
-        icon = '󰊄 ',
-        icon_hl = 'Title',
-        desc = 'Find Text',
-        desc_hl = 'String',
+        desc = '󰊄 Text',
+        group = 'DashboardFooter',
         key = 't',
-        key_hl = 'Number',
         action = 'Telescope live_grep',
       },
       {
-        icon = '󱑀 ',
-        icon_hl = 'Title',
-        desc = 'Recent Files',
-        desc_hl = 'String',
-        key = 'r',
-        key_hl = 'Number',
-        action = 'Telescope oldfiles',
-      },
-      {
-        icon = ' ',
-        icon_hl = 'Title',
-        desc = 'Edit configs',
-        desc_hl = 'String',
-        key = 'e',
-        key_hl = 'Number',
-        action = 'edit' .. vim.fn.stdpath('config'),
-      },
-      {
-        icon = '󰅙 ',
-        icon_hl = 'Title',
-        desc = 'quit',
-        desc_hl = 'String',
-        key = 'q',
-        key_hl = 'Number',
-        action = ':q',
+        desc = '󰚰 Update',
+        group = 'DashboardFooter',
+        key = 'u',
+        action = 'Lazy update',
       },
     },
+    project = {
+      limit = 6,
+      action = 'e cwd='
+    },
+    mru = {
+      limit = 6
+    }
   },
+  hide = {
+    tabline = false
+  }
 })
