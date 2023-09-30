@@ -24,7 +24,7 @@ if lazy_status then
     {
       'nvim-neo-tree/neo-tree.nvim',
       branch = 'v3.x',
-      cmd = 'Neotree',
+      event = 'VimEnter',
       dependencies = {
         'MunifTanjim/nui.nvim',
         'nvim-lua/plenary.nvim',
