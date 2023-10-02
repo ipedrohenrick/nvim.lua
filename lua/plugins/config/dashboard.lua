@@ -29,7 +29,6 @@ require('dashboard').setup({
     },
     project = {
       limit = 6,
-      action = 'e cwd=',
     },
     mru = {
       limit = 6,
