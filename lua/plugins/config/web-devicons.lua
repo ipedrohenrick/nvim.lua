@@ -33,6 +33,10 @@ require('nvim-web-devicons').setup({
       color = '#e63939',
       name = 'GitCommit',
     },
-
+    ['.env.example'] = {
+      icon = '',
+      color = '#faf743',
+      name = 'Env',
+    },
   },
 })
