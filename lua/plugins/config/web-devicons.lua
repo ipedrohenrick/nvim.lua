@@ -28,5 +28,11 @@ require('nvim-web-devicons').setup({
       color = '#e63939',
       name = 'Gitmodules',
     },
+    ['commit_editmsg'] = {
+      icon = '',
+      color = '#e63939',
+      name = 'GitCommit',
+    },
+
   },
 })
