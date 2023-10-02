@@ -186,6 +186,7 @@ if lazy_status then
         require('mason').setup()
         require('mason-lspconfig').setup({
           ensure_installed = {
+            'bashls',
             'cssls',
             'html',
             'lua_ls',

@@ -17,9 +17,9 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig['html'].setup({
+lspconfig['bashls'].setup({
   capabilities = capabilities,
-  on_attach = on_attach,
+  on_attach = on_attach
 })
 
 lspconfig['cssls'].setup({
@@ -27,7 +27,7 @@ lspconfig['cssls'].setup({
   on_attach = on_attach,
 })
 
-lspconfig['pyright'].setup({
+lspconfig['html'].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
@@ -48,6 +48,16 @@ lspconfig['lua_ls'].setup({
       },
     },
   },
+})
+
+lspconfig['pyright'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig['tsserver'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 local function get_typescript_server_path(root_dir)
@@ -76,9 +86,4 @@ lspconfig['volar'].setup({
   on_new_config = function(new_config, new_root_dir)
     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
   end,
-})
-
-lspconfig['tsserver'].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
 })
