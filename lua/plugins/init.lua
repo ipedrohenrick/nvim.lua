@@ -190,6 +190,8 @@ if lazy_status then
             'html',
             'lua_ls',
             'pyright',
+            'tsserver',
+            'volar',
           },
         })
       end,
