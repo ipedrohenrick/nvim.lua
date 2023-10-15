@@ -174,7 +174,7 @@ if lazy_status then
     {
       'nvim-treesitter/nvim-treesitter',
       build = ':TSUpdate',
-      dependencies = 'HiPhish/nvim-ts-rainbow2',
+      dependencies = 'HiPhish/rainbow-delimiters.nvim',
       config = function()
         require('plugins.config.treesitter')
       end,

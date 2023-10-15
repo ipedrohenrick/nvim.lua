@@ -1,11 +1,4 @@
-local rainbow = require('ts-rainbow')
-
 require('nvim-treesitter.configs').setup({
-  rainbow = {
-    enable = true,
-    query = 'rainbow-parens',
-    strategy = rainbow.strategy.global,
-  },
   auto_install = true,
   highlight = {
     enable = true,
