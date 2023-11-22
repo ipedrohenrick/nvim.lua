@@ -10,6 +10,11 @@ require('nvim-web-devicons').setup({
       color = '#89e051',
       name = 'ShellScript',
     },
+    vagrantfile = {
+      icon = '⍱',
+      color = '#1563FF',
+      name = 'Vagrantfile',
+    },
   },
 
   override_by_filename = {
