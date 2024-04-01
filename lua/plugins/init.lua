@@ -117,7 +117,7 @@ if lazy_status then
       'hrsh7th/nvim-cmp',
       event = 'InsertEnter',
       dependencies = {
-        'L3MON4D3/LuaSnip',
+        'LuaSnip',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-nvim-lua',
@@ -128,8 +128,15 @@ if lazy_status then
       },
       config = function()
         require('plugins.lsp.cmp')
-        require('luasnip').setup()
       end,
+    },
+    {
+      'L3MON4D3/LuaSnip',
+      version = '2.*',
+      run = 'make install_jsregexp',
+      config = function()
+        require('luasnip').setup()
+      end
     },
     {
       'neovim/nvim-lspconfig',
