@@ -21,5 +21,10 @@ require('nvim-treesitter.configs').setup({
     'yaml',
     'markdown',
     'markdown_inline',
+    'query',
+    'vim',
+    'vimdoc',
+    'gitcommit',
+    'gitignore'
   },
 })
