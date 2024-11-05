@@ -1,12 +1,15 @@
 require('dashboard').setup({
   theme = 'hyper',
   disable_move = true,
+  shortcut_type = 'number',
+  shuffle_letter = false,
   change_to_vcs_root = true,
   config = {
     week_header = {
       enable = true,
       concat = '我們開始工作吧，好嗎？',
     },
+    disable_move = true,
     shortcut = {
       {
         desc = '󰈞 Files',
@@ -28,10 +31,10 @@ require('dashboard').setup({
       },
     },
     project = {
-      limit = 6,
+      limit = 4,
     },
     mru = {
-      limit = 6,
+      limit = 4,
     },
   },
   hide = {
