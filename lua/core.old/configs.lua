@@ -3,7 +3,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 
 -- cursor
-vim.cmd('set guicursor=n:block,i:ver1,v:hor1')
+vim.cmd 'set guicursor=n:block,i:ver1,v:hor1'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
@@ -34,13 +34,13 @@ vim.opt.signcolumn = 'yes'
 vim.opt.backspace = 'indent,eol,start'
 
 -- clipboard
-vim.opt.clipboard:append('unnamedplus')
+vim.opt.clipboard:append 'unnamedplus'
 
 -- split windows
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.iskeyword:append('-')
+vim.opt.iskeyword:append '-'
 
 vim.g.python3_host_prog = '/bin/python3'
 

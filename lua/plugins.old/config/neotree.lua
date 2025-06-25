@@ -15,7 +15,7 @@ vim.fn.sign_define(
   { text = ' ', texthl = 'DiagnosticSignHint' }
 )
 
-require('neo-tree').setup({
+require('neo-tree').setup {
   default_component_configs = {
     indent = {
       with_expanders = true,
@@ -59,8 +59,8 @@ require('neo-tree').setup({
     {
       event = 'file_opened',
       handler = function()
-        vim.cmd('Neotree close')
+        vim.cmd 'Neotree close'
       end,
     },
   },
-})
+}

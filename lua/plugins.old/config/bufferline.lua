@@ -1,4 +1,4 @@
-require('bufferline').setup({
+require('bufferline').setup {
   options = {
     mode = 'buffers',
     always_show_bufferline = false,
@@ -20,4 +20,4 @@ require('bufferline').setup({
       },
     },
   },
-})
+}

@@ -1,15 +1,15 @@
 local lazy_status, lazy = pcall(require, 'lazy')
 if lazy_status then
-  lazy.setup({
+  lazy.setup {
     -- theme
     {
       'catppuccin/nvim',
       name = 'catppuccin',
       config = function()
-        require('catppuccin').setup({
+        require('catppuccin').setup {
           flavour = 'mocha',
-        })
-        vim.cmd('colorscheme catppuccin')
+        }
+        vim.cmd 'colorscheme catppuccin'
       end,
     },
 
@@ -18,7 +18,7 @@ if lazy_status then
       'glepnir/dashboard-nvim',
       event = 'VimEnter',
       config = function()
-        require('plugins.config.dashboard')
+        require 'plugins.config.dashboard'
       end,
     },
     {
@@ -31,8 +31,8 @@ if lazy_status then
         'nvim-tree/nvim-web-devicons',
       },
       config = function()
-        require('plugins.config.neotree')
-        require('plugins.config.web-devicons')
+        require 'plugins.config.neotree'
+        require 'plugins.config.web-devicons'
       end,
     },
     {
@@ -52,14 +52,14 @@ if lazy_status then
       event = 'User FileOpened',
       dependencies = 'nvim-web-devicons',
       config = function()
-        require('plugins.config.bufferline')
+        require 'plugins.config.bufferline'
       end,
     },
     {
       'nvim-lualine/lualine.nvim',
       event = 'User FileOpened',
       config = function()
-        require('plugins.config.lualine')
+        require 'plugins.config.lualine'
       end,
     },
 
@@ -76,7 +76,7 @@ if lazy_status then
       main = 'ibl',
       event = 'User FileOpened',
       config = function()
-        require('plugins.config.blankline')
+        require 'plugins.config.blankline'
       end,
     },
     {
@@ -127,7 +127,7 @@ if lazy_status then
         'rafamadriz/friendly-snippets',
       },
       config = function()
-        require('plugins.lsp.cmp')
+        require 'plugins.lsp.cmp'
       end,
     },
     {
@@ -136,7 +136,7 @@ if lazy_status then
       run = 'make install_jsregexp',
       config = function()
         require('luasnip').setup()
-      end
+      end,
     },
     {
       'neovim/nvim-lspconfig',
@@ -148,7 +148,7 @@ if lazy_status then
         'nvimdev/lspsaga.nvim',
       },
       config = function()
-        require('plugins.lsp.lspconfig')
+        require 'plugins.lsp.lspconfig'
         require('lspsaga').setup()
       end,
     },
@@ -165,7 +165,7 @@ if lazy_status then
       },
       config = function()
         require('mason').setup()
-        require('mason-lspconfig').setup({
+        require('mason-lspconfig').setup {
           ensure_installed = {
             'bashls',
             'cssls',
@@ -175,7 +175,7 @@ if lazy_status then
             'ts_ls',
             'volar',
           },
-        })
+        }
       end,
     },
     {
@@ -183,8 +183,8 @@ if lazy_status then
       build = ':TSUpdate',
       dependencies = 'HiPhish/rainbow-delimiters.nvim',
       config = function()
-        require('plugins.config.treesitter')
+        require 'plugins.config.treesitter'
       end,
     },
-  })
+  }
 end

@@ -1,5 +1,5 @@
-local lspconfig = require('lspconfig')
-local util = require('lspconfig.util')
+local lspconfig = require 'lspconfig'
+local util = require 'lspconfig.util'
 
 local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -17,27 +17,27 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig['bashls'].setup({
+lspconfig['bashls'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-})
+}
 
-lspconfig['clangd'].setup({
+lspconfig['clangd'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-})
+}
 
-lspconfig['cssls'].setup({
+lspconfig['cssls'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-})
+}
 
-lspconfig['html'].setup({
+lspconfig['html'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-})
+}
 
-lspconfig['lua_ls'].setup({
+lspconfig['lua_ls'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -47,26 +47,26 @@ lspconfig['lua_ls'].setup({
       },
       workspace = {
         library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.stdpath('config') .. 'lua'] = true,
+          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+          [vim.fn.stdpath 'config' .. 'lua'] = true,
         },
       },
     },
   },
-})
+}
 
-lspconfig['pyright'].setup({
+lspconfig['pyright'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-})
+}
 
-lspconfig['ts_ls'].setup({
+lspconfig['ts_ls'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
-})
+}
 
 local function get_typescript_server_path(root_dir)
-  local masonpath = vim.fn.stdpath('data') .. '/mason'
+  local masonpath = vim.fn.stdpath 'data' .. '/mason'
   local global_ts = masonpath
     .. '/packages/typescript-language-server/node_modules/typescript/lib'
   -- Alternative location if installed as root:
@@ -85,10 +85,10 @@ local function get_typescript_server_path(root_dir)
   end
 end
 
-lspconfig['volar'].setup({
+lspconfig['volar'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
   on_new_config = function(new_config, new_root_dir)
     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
   end,
-})
+}

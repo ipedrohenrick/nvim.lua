@@ -1,4 +1,4 @@
-require('dashboard').setup({
+require('dashboard').setup {
   theme = 'hyper',
   disable_move = true,
   shortcut_type = 'number',
@@ -40,4 +40,4 @@ require('dashboard').setup({
   hide = {
     tabline = false,
   },
-})
+}
