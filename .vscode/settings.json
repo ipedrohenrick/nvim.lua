@@ -1,0 +1,10 @@
+{
+    "cSpell.words": [
+        "catppuccin",
+        "lazypath",
+        "nvim"
+    ],
+    "Lua.diagnostics.globals": [
+        "vim"
+    ]
+}
