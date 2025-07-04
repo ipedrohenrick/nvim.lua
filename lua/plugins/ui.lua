@@ -13,12 +13,31 @@ return {
   },
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
+    branch = '0.1.*',
     dependencies = 'nvim-lua/plenary.nvim',
     keys = {
       {'<leader>ff', '<cmd>Telescope find_files<CR>', 'Telescope find files'},
       {'<leader>fg', '<cmd>Telescope live_grep<CR>', 'Telescope live grep'},
       {'<leader>fb', '<cmd>Telescope buffers<CR>', 'Telescope list buffers'},
+    }
+  },
+  {
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    opts = {
+      preset = 'helix',
+      spec = {
+        {
+          mode = { 'n' },
+          { '<leader>w', desc='Write' },
+          { '<leader>q', desc='Quit'},
+          -- telescope
+          { '<leader>f', group='find/files' },
+          { '<leader>ff', desc='Telescope find files' },
+          { '<leader>fg', desc='Telescope live grep' },
+          { '<leader>fb', desc='Telescope list buffers' },
+        },
+      }
     }
   }
 }
