@@ -1,8 +1,8 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    event = 'VeryLazy',
     dependencies = 'nvim-tree/nvim-web-devicons',
+    event = 'VeryLazy',
     opts = {
       options = {
         component_separators = { left = '', right = '' },
@@ -12,19 +12,13 @@ return {
     }
   },
   {
-    'akinsho/bufferline.nvim',
-    version = '*',
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
+    dependencies = 'nvim-lua/plenary.nvim',
     keys = {
-      {'<S-l>', '<cmd>BufferLineCycleNext<CR>', desc='Next Buffer'},
-      {'<S-h>', '<cmd>BufferLineCyclePrev<CR>', desc='Prev Buffer'},
-      {'<S-x>', '<cmd>bd<CR>', desc='Close Buffer'}
-    },
-    opts = {
-      options = {
-        show_close_icon = false,
-        always_show_bufferline = false
-      }
+      {'<leader>ff', '<cmd>Telescope find_files<CR>', 'Telescope find files'},
+      {'<leader>fg', '<cmd>Telescope live_grep<CR>', 'Telescope live grep'},
+      {'<leader>fb', '<cmd>Telescope buffers<CR>', 'Telescope list buffers'},
     }
   }
 }

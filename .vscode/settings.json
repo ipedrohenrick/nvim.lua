@@ -1,10 +1,6 @@
 {
-    "cSpell.words": [
-        "catppuccin",
-        "lazypath",
-        "nvim"
-    ],
-    "Lua.diagnostics.globals": [
+  "cSpell.enabled": false,  
+  "Lua.diagnostics.globals": [
         "vim"
-    ]
+    ],
 }
