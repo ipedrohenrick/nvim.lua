@@ -54,5 +54,6 @@ return {
     keys = {
       { '<leader>e', '<cmd>Neotree . toggle<CR>', 'Neotree' }
     },
-  }
+  },
+  { 'nvim-tree/nvim-web-devicons', lazy = true },
 }

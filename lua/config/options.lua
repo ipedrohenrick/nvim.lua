@@ -1,6 +1,5 @@
 local opt = vim.opt
 
-opt.confirm = true
 opt.guicursor = 'n:block,i:ver1,v:hor1'
 opt.cursorline = true
 opt.scrolloff = 5
