@@ -1,7 +1,7 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = 'echasnovski/mini.icons',
     event = 'VeryLazy',
     opts = {
       options = {
@@ -19,7 +19,33 @@ return {
       {'<leader>ff', '<cmd>Telescope find_files<CR>', 'Telescope find files'},
       {'<leader>fg', '<cmd>Telescope live_grep<CR>', 'Telescope live grep'},
       {'<leader>fb', '<cmd>Telescope buffers<CR>', 'Telescope list buffers'},
-    }
+    },
+    opts = {
+      defaults = {
+        file_ignore_patterns = {
+          '.git',
+          '*.sqlite*',
+          'venv',
+          '.venv',
+          '__pycache__',
+        }
+      },
+      pickers = {
+        find_files = {
+          previewer = false,
+          hidden = true,
+          theme = 'dropdown'
+        },
+        live_grep = {
+          hidden = true,
+          theme = 'dropdown'
+        },
+        buffers = {
+          previewer = false,
+          theme = 'dropdown'
+        }
+      },
+    },
   },
   {
     'folke/which-key.nvim',
@@ -44,16 +70,24 @@ return {
     }
   },
   {
-    'nvim-neo-tree/neo-tree.nvim',
-    version = '3.x',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
+    'echasnovski/mini.files',
+    version = 'v0.16.*',
+    dependencies = 'echasnovski/mini.icons',
     keys = {
-      { '<leader>e', '<cmd>Neotree . toggle<CR>', 'Neotree' }
+      { '<leader>e', '<cmd>lua MiniFiles.open()<CR>', 'Mini files' }
     },
+    config = function ()
+      require('mini.files').setup()
+    end
   },
-  { 'nvim-tree/nvim-web-devicons', lazy = true },
+  {
+    'echasnovski/mini.icons',
+    version = 'v0.16.*',
+    lazy = true,
+    config = function ()
+      require('mini.icons').setup()
+      require('mini.icons').mock_nvim_web_devicons()
+    end
+  },
+  { 'christoomey/vim-tmux-navigator', event = 'VeryLazy' },
 }

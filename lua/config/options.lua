@@ -3,6 +3,8 @@ vim.g.loaded_netrwPlugin = 1
 
 local opt = vim.opt
 
+opt.list = true
+opt.listchars:append('space:⋅')
 opt.guicursor = 'n:block,i:ver1,v:hor1'
 opt.cursorline = true
 opt.scrolloff = 5
