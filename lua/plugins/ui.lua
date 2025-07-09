@@ -7,7 +7,6 @@ return {
       options = {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = { 'NvimTree', 'neo-tree' },
       },
     }
   },
@@ -19,6 +18,7 @@ return {
       {'<leader>ff', '<cmd>Telescope find_files<CR>', 'Telescope find files'},
       {'<leader>fg', '<cmd>Telescope live_grep<CR>', 'Telescope live grep'},
       {'<leader>fb', '<cmd>Telescope buffers<CR>', 'Telescope list buffers'},
+      {'<leader>fs', '<cmd>Telescope git_status<CR>', 'Telescope git status'},
     },
     opts = {
       defaults = {
@@ -43,6 +43,10 @@ return {
         buffers = {
           previewer = false,
           theme = 'dropdown'
+        },
+        git_status = {
+          previewer = false,
+          theme = 'dropdown'
         }
       },
     },
@@ -63,8 +67,9 @@ return {
           { '<leader>ff', desc='Telescope find files' },
           { '<leader>fg', desc='Telescope live grep' },
           { '<leader>fb', desc='Telescope list buffers' },
-          -- neotree
-          { '<leader>e', desc='Neotree'}
+          { '<leader>fs', desc='Telescope git status' },
+          -- mini files
+          { '<leader>e', desc='Mini files' },
         },
       }
     }

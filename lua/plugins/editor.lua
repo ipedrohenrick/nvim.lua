@@ -37,5 +37,26 @@ return {
     config = function ()
       require('ibl').setup({ scope = { enabled = false }})
     end
+  },
+  {
+    'numToStr/Comment.nvim',
+    version = 'v0.8.*',
+    event = 'VeryLazy'
+  },
+  {
+    'echasnovski/mini.pairs',
+    version = 'v0.16.*',
+    event = 'VeryLazy',
+    config = function ()
+      require('mini.pairs').setup()
+    end
+  },
+  {
+    'lewis6991/gitsigns.nvim',
+    version = 'v1.0.*',
+    event = 'VeryLazy',
+    config = function()
+      require('gitsigns').setup()
+    end
   }
 }
