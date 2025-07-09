@@ -2,7 +2,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     local argc = vim.fn.argc()
     local arg = vim.fn.argv(0)
-    local open_telescope = true
+    local open_telescope = false
     if argc == 0 or (argc == 1 and vim.fn.isdirectory(arg) == 1) then
       open_telescope = true
     end
