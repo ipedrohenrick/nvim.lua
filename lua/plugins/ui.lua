@@ -87,7 +87,13 @@ return {
       { '<leader>e', '<cmd>lua MiniFiles.open()<CR>', 'Mini files' }
     },
     config = function ()
-      require('mini.files').setup()
+      require('mini.files').setup({
+        content = {
+          filter = function(entry)
+            return entry.name ~= '.git'
+          end
+        }
+      })
     end
   },
   {
