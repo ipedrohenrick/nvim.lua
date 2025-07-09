@@ -60,16 +60,21 @@ return {
       spec = {
         {
           mode = { 'n' },
-          { '<leader>w', desc='Write' },
-          { '<leader>q', desc='Quit'},
+          { '<leader>w', desc = 'Write' },
+          { '<leader>q', desc = 'Quit'},
           -- telescope
-          { '<leader>f', group='find/files' },
-          { '<leader>ff', desc='Telescope find files' },
-          { '<leader>fg', desc='Telescope live grep' },
-          { '<leader>fb', desc='Telescope list buffers' },
-          { '<leader>fs', desc='Telescope git status' },
+          { '<leader>f', group = 'find/files' },
+          { '<leader>ff', desc = 'Telescope find files' },
+          { '<leader>fg', desc = 'Telescope live grep' },
+          { '<leader>fb', desc = 'Telescope list buffers' },
+          { '<leader>fs', desc = 'Telescope git status' },
           -- mini files
-          { '<leader>e', desc='Mini files' },
+          { '<leader>e', desc = 'Mini files' },
+          -- touble
+          { '<leader>t', group = 'trouble'},
+          { '<leader>tx', desc = 'Project diagnostics'},
+          { '<leader>tX', desc = 'Buffer diagnostics'},
+          { '<leader>td', desc = 'LSP definitions'},
         },
       }
     }
