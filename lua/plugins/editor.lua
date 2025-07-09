@@ -53,7 +53,7 @@ return {
   },
   {
     'lewis6991/gitsigns.nvim',
-    version = 'v1.0.*',
+    version = 'v1.*',
     event = 'VeryLazy',
     config = function()
       require('gitsigns').setup()
