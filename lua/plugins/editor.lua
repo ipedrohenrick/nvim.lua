@@ -58,5 +58,12 @@ return {
     config = function()
       require('gitsigns').setup()
     end
+  },
+  {
+    'MagicDuck/grug-far.nvim',
+    version = 'v1.*',
+    keys = {
+      { '<leader>g', '<cmd>GrugFar<CR>', 'GrugFar' }
+    }
   }
 }
