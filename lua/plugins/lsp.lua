@@ -10,7 +10,10 @@ return {
     opts = {
       servers = {
         lua_ls = {},
-        pyright = {}
+        pyright = {},
+        html = {},
+        cssls = {},
+        bashls = {},
       },
     },
     config = function(_, opts)
@@ -63,6 +66,9 @@ return {
         ensure_installed = {
           'lua_ls',
           'pyright',
+          'bashls',
+          'cssls',
+          'html',
         },
       })
     end
