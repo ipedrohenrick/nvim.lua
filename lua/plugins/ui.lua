@@ -28,6 +28,11 @@ return {
           'venv',
           '.venv',
           '__pycache__',
+        },
+        mappings = {
+          n = {
+            ['q'] = 'close'
+          }
         }
       },
       pickers = {
@@ -42,7 +47,12 @@ return {
         },
         buffers = {
           previewer = false,
-          theme = 'dropdown'
+          theme = 'dropdown',
+          mappings = {
+            n = {
+              ['d'] = require('telescope.actions').delete_buffer
+            } 
+          }
         },
         git_status = {
           previewer = false,
