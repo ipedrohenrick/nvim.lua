@@ -67,6 +67,9 @@ return {
     event = 'VeryLazy',
     opts = {
       preset = 'helix',
+      icons = {
+        mappings = false
+      },
       spec = {
         {
           mode = { 'n' },
@@ -85,6 +88,9 @@ return {
           { '<leader>tx', desc = 'Project diagnostics'},
           { '<leader>tX', desc = 'Buffer diagnostics'},
           { '<leader>td', desc = 'LSP definitions'},
+          -- others
+          { '<leader>g', desc = 'GrugFar'},
+          { '<leader>l', desc = 'Lazy' },
         },
       }
     }
