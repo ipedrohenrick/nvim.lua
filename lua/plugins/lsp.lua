@@ -47,7 +47,7 @@ return {
         preset = 'none',
         ['<Tab>'] = { 'select_next', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'fallback' },
-        ['<C-space>'] = { 'show' },
+        ['<C-\\>'] = { 'show' },
         ['<C-e>'] = { 'hide' },
         ['<CR>'] = { 'accept', 'fallback' },
       }
