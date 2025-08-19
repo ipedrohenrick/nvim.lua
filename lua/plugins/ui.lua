@@ -12,10 +12,10 @@ return {
     version = '0.1.*',
     dependencies = 'nvim-lua/plenary.nvim',
     keys = {
-      {'<leader>ff', '<cmd>Telescope find_files<CR>', 'Telescope find files'},
-      {'<leader>fg', '<cmd>Telescope live_grep<CR>', 'Telescope live grep'},
-      {'<leader>fb', '<cmd>Telescope buffers<CR>', 'Telescope list buffers'},
-      {'<leader>fs', '<cmd>Telescope git_status<CR>', 'Telescope git status'},
+      { '<leader>ff', '<cmd>Telescope find_files<CR>', 'Telescope find files' },
+      { '<leader>fg', '<cmd>Telescope live_grep<CR>', 'Telescope live grep' },
+      { '<leader>fb', '<cmd>Telescope buffers<CR>', 'Telescope list buffers' },
+      { '<leader>fs', '<cmd>Telescope git_status<CR>', 'Telescope git status' },
     },
     opts = {
       defaults = {
@@ -49,7 +49,7 @@ return {
           mappings = {
             n = {
               ['d'] = require('telescope.actions').delete_buffer
-            } 
+            }
           }
         },
         git_status = {
@@ -79,10 +79,10 @@ return {
           { '<leader>fg', desc = 'Telescope live grep' },
           { '<leader>fb', desc = 'Telescope list buffers' },
           { '<leader>fs', desc = 'Telescope git status' },
-          -- mini files
-          { '<leader>e', desc = 'Mini files' },
+          -- Oil files
+          { '<leader>e', desc = 'Oil files' },
           -- touble
-          { '<leader>t', group = 'trouble'},
+          { '<leader>t', group = 'Trouble'},
           { '<leader>tx', desc = 'Project diagnostics'},
           { '<leader>tX', desc = 'Buffer diagnostics'},
           { '<leader>td', desc = 'LSP definitions'},
@@ -94,18 +94,21 @@ return {
     }
   },
   {
-    'echasnovski/mini.files',
-    version = 'v0.16.*',
+    'stevearc/oil.nvim',
+    version = 'v2.15.*',
     dependencies = 'echasnovski/mini.icons',
     keys = {
-      { '<leader>e', '<cmd>lua MiniFiles.open()<CR>', 'Mini files' }
+      { '<leader>e', '<cmd>Oil<CR>', 'Oil files' }
     },
-    config = function ()
-      require('mini.files').setup({
-        content = {
-          filter = function(entry)
-            return entry.name ~= '.git'
+    config = function()
+      require('oil').setup({
+        view_options = {
+          is_hidden_file = function(name, _)
+            return name == '.git'
           end
+        },
+        keymaps = {
+          ['<leader>e'] = { 'actions.close', mode = 'n' }
         }
       })
     end
@@ -114,7 +117,7 @@ return {
     'echasnovski/mini.icons',
     version = 'v0.16.*',
     lazy = true,
-    config = function ()
+    config = function()
       require('mini.icons').setup()
       require('mini.icons').mock_nvim_web_devicons()
     end
