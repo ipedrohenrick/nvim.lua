@@ -63,7 +63,7 @@ return {
     'MagicDuck/grug-far.nvim',
     version = 'v1.*',
     keys = {
-      { '<leader>g', '<cmd>GrugFar<CR>', 'GrugFar' }
+      { '<leader>r', '<cmd>GrugFar<CR>', 'GrugFar' }
     }
   }
 }

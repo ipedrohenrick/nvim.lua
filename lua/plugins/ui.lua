@@ -86,8 +86,12 @@ return {
           { '<leader>tx', desc = 'Project diagnostics'},
           { '<leader>tX', desc = 'Buffer diagnostics'},
           { '<leader>td', desc = 'LSP definitions'},
+          -- Lazygit
+          { '<leader>g', group = 'Lazygit' },
+          { '<leader>gs', desc = 'Git status' },
+          { '<leader>gl', desc = 'Git logs' },
           -- others
-          { '<leader>g', desc = 'GrugFar'},
+          { '<leader>r', desc = 'GrugFar'},
           { '<leader>l', desc = 'Lazy' },
         },
       }
@@ -112,6 +116,14 @@ return {
         }
       })
     end
+  },
+  {
+    'kdheepak/lazygit.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
+    keys = {
+      { '<leader>gs', '<cmd>LazyGit<CR>', desc='Lazygit' },
+      { '<leader>gl', '<cmd>LazyGitLog<CR>', desc='Lazygit Logs' },
+    }
   },
   {
     'echasnovski/mini.icons',
