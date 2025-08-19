@@ -21,9 +21,9 @@
 --   end
 -- })
 
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'TelescopeFindPre',
-  callback = function()
-    require('mini.files').close()
-  end
-})
+-- vim.api.nvim_create_autocmd('User', {
+--   pattern = 'TelescopeFindPre',
+--   callback = function()
+--     require('mini.files').close()
+--   end
+-- })
