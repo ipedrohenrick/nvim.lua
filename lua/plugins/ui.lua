@@ -118,6 +118,15 @@ return {
     end
   },
   {
+    'mikavilpas/yazi.nvim',
+    version = 'v11.*',
+    dependencies = 'nvim-lua/plenary.nvim',
+    keys = {
+      { '<leader>yf', '<cmd>Yazi<CR>', desc = 'Open Yazi at the current file' },
+      { '<leader>yd', '<cmd>Yazi<CR>', desc = 'Open Yazi in working directory' }
+    }
+  },
+  {
     'kdheepak/lazygit.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     keys = {
