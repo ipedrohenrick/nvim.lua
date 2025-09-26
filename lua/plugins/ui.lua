@@ -11,8 +11,7 @@ return {
     'ibhagwan/fzf-lua',
     dependencies = 'echasnovski/mini.icons',
     keys = {
-      { '<leader>ff', '<cmd>FzfLua git_files<CR>', 'Find git files' },
-      { '<leader>fv', '<cmd>FzfLua files<CR>', 'Find all files' },
+      { '<leader>ff', '<cmd>FzfLua files<CR>', 'Find files' },
       { '<leader>fb', '<cmd>FzfLua buffers<CR>', 'Find buffers' },
       { '<leader>fg', '<cmd>FzfLua live_grep<CR>', 'Livre grep' },
       -- git
@@ -41,7 +40,6 @@ return {
           -- fzf-lua
           { '<leader>f', group = 'Find/files' },
           { '<leader>ff', desc = 'Find files' },
-          { '<leader>fv', desc = 'Find all files' },
           { '<leader>fg', desc = 'Live grep' },
           { '<leader>fb', desc = 'List buffers' },
           -- fzf-lua (git)
@@ -62,7 +60,6 @@ return {
           { '<leader>t', group = 'Lsp'},
           { '<leader>tx', desc = 'Project diagnostics'},
           { '<leader>tX', desc = 'Buffer diagnostics'},
-          { '<leader>td', desc = 'LSP definitions'},
           -- others
           { '<leader>l', desc = 'Lazy' },
         },

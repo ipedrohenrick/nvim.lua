@@ -21,12 +21,13 @@ local sections = {
 function fg_color_mode()
   local mode = vim.fn.mode()
   local colors_mode = {
-    n = palette.blue,
-    v = palette.mauve,
-    V = palette.mauve,
-    i = palette.peach,
-    c = palette.green,
-    R = palette.red,
+    ['n'] = palette.blue,
+    ['v'] = palette.mauve,
+    ['V'] = palette.mauve,
+    ['\22'] = palette.mauve,
+    ['i'] = palette.peach,
+    ['c'] = palette.green,
+    ['R'] = palette.red,
   }
 
   return { fg = colors_mode[mode] or palette.text }
@@ -54,6 +55,7 @@ table.insert(sections.lualine_b, { 'diff' })
 table.insert(sections.lualine_b, {
   'diagnostics',
   padding = { left = 1, right = 2 },
+  symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' }
 })
 
 table.insert(sections.lualine_c, { 'filename' })

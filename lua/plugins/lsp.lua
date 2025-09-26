@@ -7,19 +7,8 @@ return {
       'mason-org/mason.nvim'
     },
     event = 'VeryLazy',
-    opts = {
-      servers = {
-        lua_ls = {},
-        pyright = {},
-        html = {},
-        cssls = {},
-        bashls = {},
-      },
-    },
-    config = function(_, opts)
-      for server, _ in pairs(opts.servers) do
-        vim.lsp.enable(server)
-      end
+    config = function()
+      require('config.lsp')
     end
   },
   {
@@ -73,14 +62,22 @@ return {
       })
     end
   },
-  { 'L3MON4D3/LuaSnip', version = 'v2.*', lazy = true },
+  {
+    'L3MON4D3/LuaSnip',
+    version = 'v2.*',
+    dependencies = 'rafamadriz/friendly-snippets',
+    lazy = true,
+    config = function ()
+      require("luasnip.loaders.from_vscode").lazy_load()
+    end
+  },
   {
     'folke/trouble.nvim',
     version = 'v3.*',
     keys = {
       { '<leader>tx', '<cmd>Trouble diagnostics toggle<CR>', 'Diagnostics' },
       { '<leader>tX', '<cmd>Trouble diagnostics toggle filter.buf=0<CR>', 'Buffer Diagnostics' },
-      { '<leader>td', '<cmd>Trouble lsp_definitions toggle<CR>', 'Diagnostics' },
+      { 'td', '<cmd>Trouble lsp_definitions toggle<CR>', 'Diagnostics' },
     },
     config = function()
       require('trouble').setup({

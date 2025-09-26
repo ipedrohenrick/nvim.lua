@@ -5,6 +5,7 @@
 - [neovim node-client](https://github.com/neovim/node-client)
 - [pynvim](https://github.com/neovim/pynvim)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fzf](https://github.com/junegunn/fzf)
 - xclip
 - wget
 
