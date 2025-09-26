@@ -8,56 +8,21 @@ return {
     end
   },
   {
-    'nvim-telescope/telescope.nvim',
-    version = '0.1.*',
-    dependencies = 'nvim-lua/plenary.nvim',
+    'ibhagwan/fzf-lua',
+    dependencies = 'echasnovski/mini.icons',
     keys = {
-      { '<leader>ff', '<cmd>Telescope find_files<CR>', 'Telescope find files' },
-      { '<leader>fg', '<cmd>Telescope live_grep<CR>', 'Telescope live grep' },
-      { '<leader>fb', '<cmd>Telescope buffers<CR>', 'Telescope list buffers' },
-      { '<leader>fs', '<cmd>Telescope git_status<CR>', 'Telescope git status' },
-    },
-    opts = {
-      defaults = {
-        initial_mode = 'normal',
-        file_ignore_patterns = {
-          '.git',
-          '*.sqlite*',
-          'venv',
-          '.venv',
-          '__pycache__',
-        },
-        mappings = {
-          n = {
-            ['q'] = 'close'
-          }
-        }
-      },
-      pickers = {
-        find_files = {
-          previewer = false,
-          hidden = true,
-          theme = 'dropdown'
-        },
-        live_grep = {
-          hidden = true,
-          theme = 'dropdown'
-        },
-        buffers = {
-          previewer = false,
-          theme = 'dropdown',
-          mappings = {
-            n = {
-              ['d'] = require('telescope.actions').delete_buffer
-            }
-          }
-        },
-        git_status = {
-          previewer = false,
-          theme = 'dropdown'
-        }
-      },
-    },
+      { '<leader>ff', '<cmd>FzfLua git_files<CR>', 'Find git files' },
+      { '<leader>fv', '<cmd>FzfLua files<CR>', 'Find all files' },
+      { '<leader>fb', '<cmd>FzfLua buffers<CR>', 'Find buffers' },
+      { '<leader>fg', '<cmd>FzfLua live_grep<CR>', 'Livre grep' },
+      -- git
+      { '<leader>gs', '<cmd>FzfLua git_status<CR>', 'Git status' },
+      { '<leader>gd', '<cmd>FzfLua git_diff<CR>', 'Git diff' },
+      { '<leader>gc', '<cmd>FzfLua git_commits<CR>', 'Git commits' },
+      { '<leader>gx', '<cmd>FzfLua git_bcommits<CR>', 'Git buffer commits' },
+      { '<leader>gt', '<cmd>FzfLua git_tags<CR>', 'Git tags' },
+      { '<leader>gb', '<cmd>FzfLua git_branches<CR>', 'Git branches' }
+    }
   },
   {
     'folke/which-key.nvim',
@@ -73,25 +38,32 @@ return {
           mode = { 'n' },
           { '<leader>w', desc = 'Write' },
           { '<leader>q', desc = 'Quit'},
-          -- telescope
-          { '<leader>f', group = 'find/files' },
-          { '<leader>ff', desc = 'Telescope find files' },
-          { '<leader>fg', desc = 'Telescope live grep' },
-          { '<leader>fb', desc = 'Telescope list buffers' },
-          { '<leader>fs', desc = 'Telescope git status' },
-          -- Oil files
-          { '<leader>e', desc = 'Oil files' },
-          -- touble
-          { '<leader>t', group = 'Trouble'},
+          -- fzf-lua
+          { '<leader>f', group = 'Find/files' },
+          { '<leader>ff', desc = 'Find files' },
+          { '<leader>fv', desc = 'Find all files' },
+          { '<leader>fg', desc = 'Live grep' },
+          { '<leader>fb', desc = 'List buffers' },
+          -- fzf-lua (git)
+          { '<leader>g', group = 'Git' },
+          { '<leader>gs', desc = 'Git status' },
+          { '<leader>gd', desc = 'Git diff' },
+          { '<leader>gc', desc = 'Git commits' },
+          { '<leader>gx', desc = 'Git buffer commits' },
+          { '<leader>gt', desc = 'Git tags' },
+          { '<leader>gb', desc = 'Git branches' },
+          -- oil files
+          { '<leader>e', desc = 'File explorer' },
+          -- yazi files
+          { '<leader>y', group = 'File explorer (Yazi)' },
+          { '<leader>yf', desc = 'Current file' },
+          { '<leader>yd', desc = 'Working directory' },
+          -- trouble
+          { '<leader>t', group = 'Lsp'},
           { '<leader>tx', desc = 'Project diagnostics'},
           { '<leader>tX', desc = 'Buffer diagnostics'},
           { '<leader>td', desc = 'LSP definitions'},
-          -- Lazygit
-          { '<leader>g', group = 'Lazygit' },
-          { '<leader>gs', desc = 'Git status' },
-          { '<leader>gl', desc = 'Git logs' },
           -- others
-          { '<leader>r', desc = 'GrugFar'},
           { '<leader>l', desc = 'Lazy' },
         },
       }
@@ -124,14 +96,6 @@ return {
     keys = {
       { '<leader>yf', '<cmd>Yazi<CR>', desc = 'Open Yazi at the current file' },
       { '<leader>yd', '<cmd>Yazi<CR>', desc = 'Open Yazi in working directory' }
-    }
-  },
-  {
-    'kdheepak/lazygit.nvim',
-    dependencies = 'nvim-lua/plenary.nvim',
-    keys = {
-      { '<leader>gs', '<cmd>LazyGit<CR>', desc='Lazygit' },
-      { '<leader>gl', '<cmd>LazyGitLog<CR>', desc='Lazygit Logs' },
     }
   },
   {
