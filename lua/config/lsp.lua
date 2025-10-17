@@ -4,6 +4,7 @@ local servers = {
   'cssls',
   'docker_language_server',
   'docker_compose_language_service',
+  'gopls',
   'html',
   'jsonls',
   'lua_ls',
