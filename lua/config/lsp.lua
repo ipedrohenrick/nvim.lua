@@ -1,5 +1,6 @@
 local servers = {
   'ansiblels',
+  'astro',
   'bashls',
   'cssls',
   'docker_language_server',

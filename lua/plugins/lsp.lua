@@ -53,12 +53,20 @@ return {
       require('mason').setup()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'gopls',
-          'lua_ls',
-          'pyright',
+          'ansiblels',
+          'astro',
           'bashls',
           'cssls',
+          'docker_language_server',
+          'docker_compose_language_service',
+          'gopls',
           'html',
+          'jsonls',
+          'lua_ls',
+          'pyright',
+          'ts_ls',
+          'vue_ls',
+          'yamlls'
         },
       })
     end
